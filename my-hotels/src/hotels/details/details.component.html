@@ -1,0 +1,46 @@
+<table mat-table [dataSource]="tableau" class="mat-elevation-z8">
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+   
+
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef> ID de l'hotel </th>
+      <td mat-cell *matCellDef="let element">{{element.id}}</td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef> Nom de l'hotel </th>
+      <td mat-cell *matCellDef="let element">{{element.name}}</td>
+    </ng-container>
+  
+    <!-- Weight Column -->
+    <ng-container matColumnDef="etoiles">
+      <th mat-header-cell *matHeaderCellDef> étoiles </th>
+      <td mat-cell *matCellDef="let element"> {{element.etoiles}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="note">
+        <th mat-header-cell *matHeaderCellDef> Note de l'hotel </th>
+        <td mat-cell *matCellDef="let element"> {{element.note}} </td>
+      </ng-container>
+    
+    <ng-container matColumnDef="ville">
+      <th mat-header-cell *matHeaderCellDef> Ville </th>
+      <td mat-cell *matCellDef="let element"> {{element.ville}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="update">
+      <th mat-header-cell *matHeaderCellDef> modifier </th>
+      <td mat-cell *matCellDef="let element"> <button>Modifier l'hôtel</button> </td>
+    </ng-container>
+
+    <ng-container matColumnDef="delete">
+      <th mat-header-cell *matHeaderCellDef> Delete </th>
+      <td mat-cell *matCellDef="let element"> <button>Supprimer l'hôtel</button> </td>
+    </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>

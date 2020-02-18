@@ -1,0 +1,144 @@
+{
+  "hotels": [
+    {
+      "id": 1,
+      "name": "Hôtel Calm Lille",
+      "etoiles": 2,
+      "note": 8,
+      "ville": "Lille"
+    },
+    {
+      "id": 2,
+      "name": "Hôtel Lille Europe",
+      "etoiles": 3,
+      "note": 8.2,
+      "ville": "Lille"
+    },
+    {
+      "id": 3,
+      "name": "Eklo Hotels Lille",
+      "etoiles": 3,
+      "note": 7.9,
+      "ville": "Lille"
+    },
+    {
+      "id": 4,
+      "name": "Ibis Styles Lille Centre Gare Beffroi",
+      "etoiles": 3,
+      "note": 8,
+      "ville": "Lille"
+    },
+    {
+      "id": 5,
+      "name": "Hôtel Avenir Jonquière",
+      "etoiles": 1,
+      "note": 8.1,
+      "ville": "Paris"
+    },
+    {
+      "id": 6,
+      "name": "9Hotel Bastille-Lyon",
+      "etoiles": 3,
+      "note": 8.3,
+      "ville": "Paris"
+    },
+    {
+      "id": 7,
+      "name": "Hôtel Antin Trinité",
+      "etoiles": 3,
+      "note": 7.7,
+      "ville": "Paris"
+    },
+    {
+      "id": 8,
+      "name": "Bel Oranger Gare De Lyon",
+      "etoiles": 3,
+      "note": 8.1,
+      "ville": "Paris"
+    },
+    {
+      "id": 9,
+      "name": "Campanile Lyon Centre-Berges du Rhône",
+      "etoiles": 3,
+      "note": 7.7,
+      "ville": "Lyon"
+    },
+    {
+      "id": 10,
+      "name": "Best Western Richelieu Lyon Part-Dieu",
+      "etoiles": 3,
+      "note": 7.7,
+      "ville": "Lyon"
+    },
+    {
+      "id": 11,
+      "name": "Radisson Blu Hotel",
+      "etoiles": 4,
+      "note": 8.4,
+      "ville": "Lyon"
+    },
+    {
+      "id": 12,
+      "name": "Hôtel Tête d'or",
+      "etoiles": 2,
+      "note": 8.2,
+      "ville": "Lyon"
+    },
+    {
+      "id": 13,
+      "name": "Hôtel Saint Nicolas",
+      "etoiles": 3,
+      "note": 7.9,
+      "ville": "Bruxelles"
+    },
+    {
+      "id": 14,
+      "name": "Hôtel Le Dome",
+      "etoiles": 2,
+      "note": 7.4,
+      "ville": "Bruxelles"
+    },
+    {
+      "id": 15,
+      "name": "Citadies Sainte Catherine Brussels Aparthotel",
+      "etoiles": 3,
+      "note": 8.4,
+      "ville": "Bruxelles"
+    },
+    {
+      "id": 16,
+      "name": "Warwick Brussels - Grand Place",
+      "etoiles": 5,
+      "note": 8.4,
+      "ville": "Bruxelles"
+    },
+    {
+      "id": 17,
+      "name": "Hotel Da Vinci",
+      "etoiles": 4,
+      "note": 8,
+      "ville": "Milan"
+    },
+    {
+      "id": 18,
+      "name": "Hotel degli Arcimboldi",
+      "etoiles": 4,
+      "note": 8.2,
+      "ville": "Milan"
+    },
+    {
+      "id": 19,
+      "name": "Agape Hotel",
+      "etoiles": 3,
+      "note": 8.2,
+      "ville": "Milan"
+    },
+    {
+      "id": 20,
+      "name": "B&B Hotel Milano San Siro",
+      "etoiles": 3,
+      "note": 8.3,
+      "ville": "Milan"
+    }
+  ]
+}

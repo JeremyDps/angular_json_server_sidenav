@@ -1,0 +1,17 @@
+.example-container {
+    position: absolute;
+    top: 60px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgb(245, 242, 242);
+  }
+
+  mat-sidenav {
+      width: 20%;
+      background: rgb(185, 182, 182);
+  }
+
+  mat-sidenav-content {
+      width: 80%;
+  }
