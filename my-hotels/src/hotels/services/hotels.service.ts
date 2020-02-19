@@ -3,6 +3,7 @@ import { Observable } from 'rxjs';
 import { Hotels } from 'src/app/shared/models/hotels';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { ActivatedRoute } from '@angular/router';
+// import { ConsoleReporter } from 'jasmine';
 
 @Injectable()
 export class HotelsService {
@@ -33,6 +34,11 @@ export class HotelsService {
   put(id: number, hotel: Hotels[]) {
     console.log('dans le service');
     return this.http.put<Hotels[]>('http://localhost:3000/hotels/' + id, hotel, this.httpOptions);
+  }
+
+  post(hotel: {}) {
+    console.log('Dans le post');
+    return this.http.post<Hotels[]>('http://localhost:3000/hotels', hotel, this.httpOptions);
   }
 }
 

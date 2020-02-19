@@ -48,12 +48,14 @@ export class UpdateComponent implements OnInit {
   }
 
   afficher(form: NgForm) {
+
    console.log('formulaire envoyé ', this.idHotel + ' ' + form.value['ville']);
    this.tabHotel['name'] = form.value['name'];
    this.tabHotel['etoiles'] = form.value['etoiles'];
    this.tabHotel['note'] = form.value['note'];
    this.tabHotel['ville'] = form.value['ville'];
    console.log(this.tabHotel);
+
    this.updateHotel$ = this.hotelService.put(this.idHotel, this.tabHotel);
 
    console.log(this.updateHotel$.subscribe({
