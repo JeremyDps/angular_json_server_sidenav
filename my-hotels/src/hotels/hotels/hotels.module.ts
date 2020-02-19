@@ -14,7 +14,7 @@ import { DetailsModule } from '../details/details.module';
     CommonModule,
     HttpClientModule,
     FormsModule,
-    MatTableModule,
+    MatTableModule
   ],
   exports: [
     HotelsComponent

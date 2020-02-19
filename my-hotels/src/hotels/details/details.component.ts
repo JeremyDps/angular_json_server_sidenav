@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Hotels } from 'src/app/shared/models/hotels';
 import { Observable } from 'rxjs';
 import { HotelsService } from '../services/hotels.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-details',
@@ -10,8 +11,11 @@ import { HotelsService } from '../services/hotels.service';
   styleUrls: ['./details.component.scss']
 })
 export class DetailsComponent implements OnInit {
+
+  // va contenir le tableau de l'hotel choisi
   hotel: Hotels[];
 
+  // va contenir l'hotel choisi
   tableau: any[] ;
 
   name: number;
@@ -24,11 +28,15 @@ export class DetailsComponent implements OnInit {
   constructor(
     private hotelsService: HotelsService,
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private snackBar: MatSnackBar,
     ) { }
 
   ngOnInit(): void {
+    // récupération de l'id
     this.name = this.route.snapshot.params.id;
+
+    // récupération des infos de l'hotel
     this.hotelDetails$ = this.hotelsService.get(this.name);
     console.log(this.hotelDetails$.subscribe({
       next: result => {
@@ -42,23 +50,34 @@ export class DetailsComponent implements OnInit {
     }));
   }
 
+  // supprimer l'hotel
   remove(id: number): void {
     this.hotelDelete$ = this.hotelsService.delete(id);
     console.log(this.hotelDelete$.subscribe({
       next: result => {
         console.log(result);
+        this.openSnackBar('L\'hotel a été supprimé avec succès');
+        this.redirect();
       },
       error: err => {
         console.log(err);
       },
       complete: () => { console.log('delete finish'); }
     }));
-
-    this.router.navigate(['/hotels/']);
   }
 
+  openSnackBar(text: string) {
+    this.snackBar.open(text, '', {
+      duration: 2000,
+    });
+  }
+
+  redirect(): void {
+        this.router.navigate(['/hotels/']);
+  }
+
+  // renvoie vers le composant update
   update(id: number): void {
-    console.log('lancemement de la page de modification');
     this.router.navigate(['/hotels/update/' + id]);
   }
 }

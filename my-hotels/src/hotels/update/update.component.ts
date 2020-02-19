@@ -5,6 +5,9 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Hotels } from 'src/app/shared/models/hotels';
 import { NgForm } from '@angular/forms';
+import {MatSnackBar} from '@angular/material/snack-bar';
+import { MatDialog } from '@angular/material/dialog';
+//import { ConsoleReporter } from 'jasmine';
 // import { ConsoleReporter } from 'jasmine';
 
 @Component({
@@ -23,16 +26,20 @@ export class UpdateComponent implements OnInit {
 
   tabHotel: Hotels[];
 
+  // contient l'hotel que l'on veut modifier
   getHotel$: Observable<Hotels[]>;
+
+  // contient les nouvelles informations
   updateHotel$: Observable<Hotels[]>;
 
-  constructor(private hotelService: HotelsService, private route: ActivatedRoute, private router: Router) {}
+  constructor(private hotelService: HotelsService, private route: ActivatedRoute,
+              private router: Router, private snackBar: MatSnackBar,
+              public dialog: MatDialog) {}
 
   ngOnInit(): void {
     this.idHotel = this.route.snapshot.params.id;
-    console.log(this.idHotel);
-    this.city = 'des valeur';
 
+    // récupéertation des infos actuelles de l'hotel pour pouvoir l'afficher dans le placeholder
     this.getHotel$ = this.hotelService.get(this.idHotel);
     console.log(this.getHotel$.subscribe({
       next: result => {
@@ -47,14 +54,13 @@ export class UpdateComponent implements OnInit {
     }));
   }
 
+  // changement des infos + appel de la méthode put
   afficher(form: NgForm) {
 
-   console.log('formulaire envoyé ', this.idHotel + ' ' + form.value['ville']);
    this.tabHotel['name'] = form.value['name'];
    this.tabHotel['etoiles'] = form.value['etoiles'];
    this.tabHotel['note'] = form.value['note'];
    this.tabHotel['ville'] = form.value['ville'];
-   console.log(this.tabHotel);
 
    this.updateHotel$ = this.hotelService.put(this.idHotel, this.tabHotel);
 
@@ -62,6 +68,7 @@ export class UpdateComponent implements OnInit {
     next: result => {
       console.log('Je suis un message de succès');
       console.log(this.tabHotel);
+      this.openSnackBar();
       this.redirect();
     },
     error: err => {
@@ -74,9 +81,14 @@ export class UpdateComponent implements OnInit {
   getValeursForForm(): void {
       this.nameHotel = this.tabHotel['name'];
       this.starsHotel = this.tabHotel['etoiles'];
-      console.log(this.nameHotel);
       this.voteHotel = this.tabHotel['note'];
       this.city = this.tabHotel['ville'];
+  }
+
+  openSnackBar() {
+    this.snackBar.open("L'hotel a été modifié avec succès", '', {
+      duration: 2000,
+    });
   }
 
   redirect(): void {

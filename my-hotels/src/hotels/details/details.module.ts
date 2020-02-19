@@ -7,6 +7,7 @@ import { MatTableModule } from '@angular/material/table';
 import { HttpClientModule } from '@angular/common/http';
 import { HotelsService } from '../services/hotels.service';
 import { HotelsModule } from '../hotels/hotels.module';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 
 
@@ -20,7 +21,8 @@ import { HotelsModule } from '../hotels/hotels.module';
     AppRoutingModule,
     MatTableModule,
     HttpClientModule,
-    HotelsModule
+    HotelsModule,
+    MatSnackBarModule
   ],
   exports: [
     DetailsComponent
