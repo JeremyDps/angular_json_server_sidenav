@@ -1,11 +1,16 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Hotels } from 'src/app/shared/models/hotels';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { ActivatedRoute } from '@angular/router';
 
 @Injectable()
 export class HotelsService {
+
+  headers = new HttpHeaders().set('Content-Type', 'application/json').set('Accept', 'application/json');
+  httpOptions = {
+    headers: this.headers
+  };
 
   constructor(
     private http: HttpClient,
@@ -19,6 +24,15 @@ export class HotelsService {
     } else {
       return this.http.get<Hotels[]>('http://localhost:3000/hotels');
     }
+  }
+
+  delete(id: number): Observable<Hotels[]> {
+    return this.http.delete<Hotels[]>('http://localhost:3000/hotels/' + id);
+  }
+
+  put(id: number, hotel: Hotels[]) {
+    console.log('dans le service');
+    return this.http.put<Hotels[]>('http://localhost:3000/hotels/' + id, hotel, this.httpOptions);
   }
 }
 

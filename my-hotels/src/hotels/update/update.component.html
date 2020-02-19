@@ -1,0 +1,28 @@
+<div class="conteneur">
+    <form (ngSubmit)="afficher(f)" #f="ngForm" class="example-form">
+        <mat-form-field class="example-full-width">
+          <mat-label>Nom : {{ nameHotel }}</mat-label>
+          <input matInput name="name" placeholder="Ex. Pizza" placeholder="{{ nameHotel }}" type="text" ngModel required>
+        </mat-form-field>
+      
+        <mat-form-field class="example-full-width">
+            <mat-label>Etoiles : {{ starsHotel }}</mat-label>
+            <input name="etoiles" matInput placeholder="{{ starsHotel }}" type="number" step="1" min="1" max="5" ngModel required>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+            <mat-label>Note : {{ voteHotel }}</mat-label>
+            <input name="note" matInput placeholder="{{ voteHotel }}" type="number" step="0.1" min="0.0" max="10.0" ngModel required>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+            <mat-label>Ville : {{ city }}</mat-label>
+            <input name="ville" matInput placeholder="{{ city }}" type="text" ngModel required>
+        </mat-form-field>
+
+        <div>   
+            <button mat-raised-button [disabled]="f.invalid">Modifier</button>
+        </div>
+      </form>
+</div>
+

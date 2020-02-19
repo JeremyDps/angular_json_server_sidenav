@@ -33,12 +33,12 @@
 
     <ng-container matColumnDef="update">
       <th mat-header-cell *matHeaderCellDef> modifier </th>
-      <td mat-cell *matCellDef="let element"> <button>Modifier l'hôtel</button> </td>
+      <td mat-cell *matCellDef="let element"> <button (click)="update(element.id)">Modifier l'hôtel</button> </td>
     </ng-container>
 
     <ng-container matColumnDef="delete">
       <th mat-header-cell *matHeaderCellDef> Delete </th>
-      <td mat-cell *matCellDef="let element"> <button>Supprimer l'hôtel</button> </td>
+      <td mat-cell *matCellDef="let element"> <button (click)="remove(element.id)">Supprimer l'hôtel</button> </td>
     </ng-container>
   
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

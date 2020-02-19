@@ -11,6 +11,7 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import { HotelsComponent } from 'src/hotels/hotels/hotels.component';
 import { HotelsModule } from 'src/hotels/hotels/hotels.module';
 import { DetailsModule } from 'src/hotels/details/details.module';
+import { UpdateModule } from 'src/hotels/update/update.module';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { DetailsModule } from 'src/hotels/details/details.module';
     BrowserAnimationsModule,
     MatSidenavModule,
     HotelsModule,
-    DetailsModule
+    DetailsModule,
+    UpdateModule
   ],
   providers: [],
   bootstrap: [AppComponent]

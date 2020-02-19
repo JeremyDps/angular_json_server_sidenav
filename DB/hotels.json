@@ -2,7 +2,7 @@
   "hotels": [
     {
       "id": 1,
-      "name": "Hôtel Calm Lille",
+      "name": "Hotel Calm Lille",
       "etoiles": 2,
       "note": 8,
       "ville": "Lille"
